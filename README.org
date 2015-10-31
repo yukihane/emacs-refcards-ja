@@ -1,0 +1,15 @@
+* What's this ?
+
+Ubuntu 15.10 に入っていた
+/usr/share/emacs/24.5/etc/refcards/refcard.tex
+を日本語に訳したものです。
+
+* Compiling
+
+#+BEGIN_SRC 
+$ ptex ja-refcard.tex
+$ dvips -t a4 -t landscape ja-refcard.dvi
+($ gv -swap ja-refcard.ps)
+$ ps2pdf ja-refcard.ps
+#+END_SRC
+
