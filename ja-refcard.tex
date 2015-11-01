@@ -357,107 +357,106 @@ GNU Emacs \versionemacs を開始するには \kbd{emacs} と入力
 \key{指定文字目へ移動}{M-g c}
 \key{現在行の先頭文字へ移動}{M-m}
 
-\section{Killing and Deleting}
+\section{切り取りと削除}
 
 \paralign to \hsize{#\tabskip=10pt plus 1 fil&#\tabskip=0pt&#\cr
-\threecol{{\bf entity to kill}}{{\bf backward}}{{\bf forward}}
-\threecol{character (delete, not kill)}{DEL}{C-d}
-\threecol{word}{M-DEL}{M-d}
-\threecol{line (to end of)}{M-0 C-k}{C-k}
-\threecol{sentence}{C-x DEL}{M-k}
+\threecol{{\bf 削除単位}}{{\bf 後方}}{{\bf 前方}}
+\threecol{文字 (切り取りでなく削除)}{DEL}{C-d}
+\threecol{単語}{M-DEL}{M-d}
+\threecol{行}{M-0 C-k}{C-k}
+\threecol{文}{C-x DEL}{M-k}
 \threecol{sexp}{M-- C-M-k}{C-M-k}
 }
 
-\key{kill {\bf region}}{C-w}
-\key{copy region to kill ring}{M-w}
-\key{kill through next occurrence of {\it char}}{M-z {\it char}}
+\key{{\bf 指定範囲}}{C-w}
+\key{指定範囲をコピー}{M-w}
+\key{{\it char}が現れるまで}{M-z {\it char}}
 
-\key{yank back last thing killed}{C-y}
-\key{replace last yank with previous kill}{M-y}
+\key{最後に切り取ったものを貼り付け}{C-y}
+\key{最後に貼り付けたものを前回切り取ったものに置き換え}{M-y}
 
-\section{Marking}
+\section{マーキング}
 
-\key{set mark here}{C-@ {\rm or} C-SPC}
-\key{exchange point and mark}{C-x C-x}
+\key{マークをセット}{C-@ {\rm or} C-SPC}
+\key{現在位置とマークを入れ替え}{C-x C-x}
 
-\key{set mark {\it arg\/} {\bf words} away}{M-@}
-\key{mark {\bf paragraph}}{M-h}
-\key{mark {\bf page}}{C-x C-p}
-\key{mark {\bf sexp}}{C-M-@}
-\key{mark {\bf function}}{C-M-h}
-\key{mark entire {\bf buffer}}{C-x h}
+\key{{\bf 単語}をマーク}{M-@}
+\key{{\bf 文}をマーク}{M-h}
+\key{{\bf ページ}をマーク}{C-x C-p}
+\key{{\bf sexp}をマーク}{C-M-@}
+\key{{\bf 関数}をマーク}{C-M-h}
+\key{{\bf バッファ}全体をマーク}{C-x h}
 
-\section{Query Replace}
+\section{クエリ置換}
 
-\key{interactively replace a text string}{M-\%}
+\key{インタラクティブな文字列置換}{M-\%}
 % query-replace-regexp is bound to C-M-% but that can't be typed on
 % consoles.
-\metax{using regular expressions}{M-x query-replace-regexp}
+\metax{正規表現を使う}{M-x query-replace-regexp}
 
-Valid responses in query-replace mode are
+クエリ置換モードで有効な応答は
 
-\key{{\bf replace} this one, go on to next}{SPC {\rm or} y}
-\key{replace this one, don't move}{,}
-\key{{\bf skip} to next without replacing}{DEL {\rm or} n}
-\key{replace all remaining matches}{!}
-\key{{\bf back up} to the previous match}{^}
-\key{{\bf exit} query-replace}{RET}
-\key{enter recursive edit (\kbd{C-M-c} to exit)}{C-r}
+\key{{\bf 置換}し次へ}{SPC {\rm or} y}
+\key{置換し留まる}{,}
+\key{置換せずに{\bf スキップ}}{DEL {\rm or} n}
+\key{残りのマッチを全置換}{!}
+\key{前回のマッチを{\bf バックアップ}}{^}
+\key{クエリ置換を{\bf 終了}}{RET}
+\key{再帰編集 (\kbd{C-M-c} で抜ける)}{C-r}
 
 \newcolumn
-\section{Multiple Windows}
+\section{複数ウィンドウ}
 
-When two commands are shown, the second is a similar command for a
-frame instead of a window.
+2つのコマンドが記載されている場合、2つめはウィンドウではなくフレームに対する同じようなコマンドです。
 
 {\setbox0=\hbox{\kbd{0}}\advance\hsize by 0\wd0
 \paralign to \hsize{#\tabskip=10pt plus 1 fil&#\tabskip=0pt&#\cr
-\threecol{delete all other windows}{C-x 1\ \ \ \ }{C-x 5 1}
-\threecol{split window, above and below}{C-x 2\ \ \ \ }{C-x 5 2}
-\threecol{delete this window}{C-x 0\ \ \ \ }{C-x 5 0}
+\threecol{他の全ウィンドウを消去}{C-x 1\ \ \ \ }{C-x 5 1}
+\threecol{ウィンドウを上下分割}{C-x 2\ \ \ \ }{C-x 5 2}
+\threecol{自ウィンドウを消去}{C-x 0\ \ \ \ }{C-x 5 0}
 }}
-\key{split window, side by side}{C-x 3}
+\key{ウィンドウを左右分割}{C-x 3}
 
-\key{scroll other window}{C-M-v}
+\key{他ウィンドウをスクロール}{C-M-v}
 
 {\setbox0=\hbox{\kbd{0}}\advance\hsize by 2\wd0
 \paralign to \hsize{#\tabskip=10pt plus 1 fil&#\tabskip=0pt&#\cr
-\threecol{switch cursor to another window}{C-x o}{C-x 5 o}
+\threecol{カーソルを別ウィンドウへ}{C-x o}{C-x 5 o}
 
-\threecol{select buffer in other window}{C-x 4 b}{C-x 5 b}
-\threecol{display buffer in other window}{C-x 4 C-o}{C-x 5 C-o}
-\threecol{find file in other window}{C-x 4 f}{C-x 5 f}
-\threecol{find file read-only in other window}{C-x 4 r}{C-x 5 r}
-\threecol{run Dired in other window}{C-x 4 d}{C-x 5 d}
-\threecol{find tag in other window}{C-x 4 .}{C-x 5 .}
+\threecol{他ウィンドウのバッファ選択}{C-x 4 b}{C-x 5 b}
+\threecol{他ウィンドウにバッファ表示}{C-x 4 C-o}{C-x 5 C-o}
+\threecol{他ウィンドウでファイルを開く}{C-x 4 f}{C-x 5 f}
+\threecol{他ウィンドウでファイルを開く(読取専用)}{C-x 4 r}{C-x 5 r}
+\threecol{他ウィンドウでDiredを実行}{C-x 4 d}{C-x 5 d}
+\threecol{他ウィンドウでタグ検索}{C-x 4 .}{C-x 5 .}
 }}
 
-\key{grow window taller}{C-x ^}
-\key{shrink window narrower}{C-x \{}
-\key{grow window wider}{C-x \}}
+\key{ウィンドウの高さを広げる}{C-x ^}
+\key{ウィンドウの高さを狭める}{C-x \{}
+\key{ウィンドウの幅を広げる}{C-x \}}
 
-\section{Formatting}
+\section{整形}
 
-\key{indent current {\bf line} (mode-dependent)}{TAB}
-\key{indent {\bf region} (mode-dependent)}{C-M-\\}
-\key{indent {\bf sexp} (mode-dependent)}{C-M-q}
-\key{indent region rigidly {\it arg\/} columns}{C-x TAB}
-\key{indent for comment}{M-;}
+\key{現在{\bf 行}インデント (モード依存)}{TAB}
+\key{{\bf 範囲}インデント (モード依存)}{C-M-\\}
+\key{{\bf sexp}インデント (モード依存)}{C-M-q}
+\key{{\it 引数\/}で指定する範囲インデント}{C-x TAB}
+\key{コメント化}{M-;}
 
-\key{insert newline after point}{C-o}
-\key{move rest of line vertically down}{C-M-o}
-\key{delete blank lines around point}{C-x C-o}
-\key{join line with previous (with arg, next)}{M-^}
-\key{delete all white space around point}{M-\\}
-\key{put exactly one space at point}{M-SPC}
+\key{改行挿入}{C-o}
+\key{改行し列番号を合わせる}{C-M-o}
+\key{前後の空行を消去}{C-x C-o}
+\key{前行と連結(引数付きで次行)}{M-^}
+\key{前後の空白を消去}{M-\\}
+\key{スペースが1つ存在するように合わせる}{M-SPC}
 
-\key{fill paragraph}{M-q}
-\key{set fill column to {\it arg}}{C-x f}
-\key{set prefix each line starts with}{C-x .}
+\key{段落を整形}{M-q}
+\key{整形幅を{\it arg}で設定}{C-x f}
+\key{行のプレフィクスを設定}{C-x .}
 
-\key{set face}{M-o}
+\key{faceを設定}{M-o}
 
-\section{Case Change}
+\section{大文字/小文字変換}
 
 \key{uppercase word}{M-u}
 \key{lowercase word}{M-l}
