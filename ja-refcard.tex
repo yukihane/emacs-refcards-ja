@@ -458,77 +458,76 @@ GNU Emacs \versionemacs を開始するには \kbd{emacs} と入力
 
 \section{大文字/小文字変換}
 
-\key{uppercase word}{M-u}
-\key{lowercase word}{M-l}
-\key{capitalize word}{M-c}
+\key{単語を大文字に}{M-u}
+\key{単語を小文字に}{M-l}
+\key{単語頭を大文字に}{M-c}
 
-\key{uppercase region}{C-x C-u}
-\key{lowercase region}{C-x C-l}
+\key{範囲を大文字に}{C-x C-u}
+\key{範囲を小文字に}{C-x C-l}
 
-\section{The Minibuffer}
+\section{ミニバッファ}
 
-The following keys are defined in the minibuffer.
+ミニバッファで定義されているキーは次の通り。
 
-\key{complete as much as possible}{TAB}
-\key{complete up to one word}{SPC}
-\key{complete and execute}{RET}
-\key{show possible completions}{?}
-\key{fetch previous minibuffer input}{M-p}
-\key{fetch later minibuffer input or default}{M-n}
-\key{regexp search backward through history}{M-r}
-\key{regexp search forward through history}{M-s}
-\key{abort command}{C-g}
+\key{補完}{TAB}
+\key{単語補完}{SPC}
+\key{補完と実行}{RET}
+\key{補完候補を表示}{?}
+\key{前回のミニバッファ入力を取得}{M-p}
+\key{最後(あるいはデフォルト)のミニバッファ入力を取得}{M-n}
+\key{正規表現で履歴を後方検索}{M-r}
+\key{正規表現で履歴を前方検索}{M-s}
+\key{コマンド中断}{C-g}
 
-Type \kbd{C-x ESC ESC} to edit and repeat the last command that used the
-minibuffer.  Type \kbd{F10} to activate menu bar items on text terminals.
+\kbd{C-x ESC ESC} をタイプするとミニバッファを用いた編集と最後のコマンド繰り返しができる。\kbd{F10} はテキスト端末上のメニューをアクティブ化する。
 
 \newcolumn
 \title{GNU Emacs Reference Card}
 
-\section{Buffers}
+\section{バッファ}
 
-\key{select another buffer}{C-x b}
-\key{list all buffers}{C-x C-b}
-\key{kill a buffer}{C-x k}
+\key{他方のバッファを選択}{C-x b}
+\key{バッファ一覧}{C-x C-b}
+\key{バッファを消去}{C-x k}
 
-\section{Transposing}
+\section{入れ替え}
 
-\key{transpose {\bf characters}}{C-t}
-\key{transpose {\bf words}}{M-t}
-\key{transpose {\bf lines}}{C-x C-t}
-\key{transpose {\bf sexps}}{C-M-t}
+\key{{\bf 文字}を入れ替え}{C-t}
+\key{{\bf 単語}を入れ替え}{M-t}
+\key{{\bf 行}を入れ替え}{C-x C-t}
+\key{{\bf sexps}入れ替え}{C-M-t}
 
-\section{Spelling Check}
+\section{スペルチェック}
 
-\key{check spelling of current word}{M-\$}
-\metax{check spelling of all words in region}{M-x ispell-region}
-\metax{check spelling of entire buffer}{M-x ispell-buffer}
-\metax{toggle on-the-fly spell checking}{M-x flyspell-mode}
+\key{現在の単語をチェック}{M-\$}
+\metax{範囲指定した全単語をチェック}{M-x ispell-region}
+\metax{バッファ全体をチェック}{M-x ispell-buffer}
+\metax{リアルタイムチェックのON/OFF}{M-x flyspell-mode}
 
-\section{Tags}
+\section{タグ}
 
-\key{find a tag (a definition)}{M-.}
-\key{find next occurrence of tag}{C-u M-.}
-\metax{specify a new tags file}{M-x visit-tags-table}
+\key{タグ(定義)を検索}{M-.}
+\key{タグ出現箇所を検索}{C-u M-.}
+\metax{新しいタグファイルを指定}{M-x visit-tags-table}
 
-\metax{regexp search on all files in tags table}{M-x tags-search}
-\metax{run query-replace on all the files}{M-x tags-query-replace}
-\key{continue last tags search or query-replace}{M-,}
+\metax{タグテーブルの全ファイルを正規表現検索}{M-x tags-search}
+\metax{全ファイルでクエリ置換を実行}{M-x tags-query-replace}
+\key{タグ検索/クエリ置換を続ける}{M-,}
 
-\section{Shells}
+\section{シェル}
 
-\key{execute a shell command}{M-!}
-\key{execute a shell command asynchronously}{M-\&}
-\key{run a shell command on the region}{M-|}
-\key{filter region through a shell command}{C-u M-|}
-\key{start a shell in window \kbd{*shell*}}{M-x shell}
+\key{シェルコマンドを実行}{M-!}
+\key{シェルコマンドを非同期実行}{M-\&}
+\key{指定範囲をシェルコマンドにかける}{M-|}
+\key{シェルコマンドで範囲指定をフィルタする}{C-u M-|}
+\key{\kbd{*shell*}ウィンドウでシェルを開始する}{M-x shell}
 
-\section{Rectangles}
+\section{矩形操作}
 
-\key{copy rectangle to register}{C-x r r}
-\key{kill rectangle}{C-x r k}
-\key{yank rectangle}{C-x r y}
-\key{open rectangle, shifting text right}{C-x r o}
+\key{矩形をレジスタへコピーする}{C-x r r}
+\key{矩形を消去}{C-x r k}
+\key{矩形をヤンク}{C-x r y}
+\key{矩形を開け、テキストを右へ移動する}{C-x r o}
 \key{blank out rectangle}{C-x r c}
 \key{prefix each line with a string}{C-x r t}
 
